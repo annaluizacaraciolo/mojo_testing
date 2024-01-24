@@ -9,6 +9,7 @@ fn euclidean_dist(x1: Int64, y1: Int64, x2: Int64, y2: Int64):
     print(euclidean_distance)
 
 fn main():
+    # time measured in nanoseconds
     let start_time = now()
     euclidean_dist(3, 12, 7, 19)
     let end_time = now()
