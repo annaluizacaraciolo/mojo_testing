@@ -1,0 +1,20 @@
+from collections.vector import DynamicVector
+from python import Python
+from time import now
+
+
+fn gradient_descent(start: Float64, learning_rate: Float64, n_iter: Int=50, tolerance: Float64=1e-06) raises:
+    let np = Python.import_module('numpy')
+    var vector = start
+    for _ in range(n_iter):
+        let diff = -learning_rate * 2 * vector
+        if np.all(np.abs(diff) <= tolerance):
+            break
+        vector += diff
+    print(vector)
+    
+fn main() raises:
+    let start_time = now()
+    gradient_descent(start=10.0, learning_rate=0.2)
+    let end_time = now()
+    print(end_time - start_time)
